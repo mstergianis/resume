@@ -1,0 +1,338 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{tabu}
+\usepackage{floatrow}
+\usepackage{tgpagella}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fancyhdr}
+\usepackage[margin=1.15in]{geometry}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage[]{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\PassOptionsToPackage{hyphens}{url} % url is loaded by hyperref
+\usepackage[unicode=true]{hyperref}
+\hypersetup{
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
+}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\pagestyle{fancy}
+\rfoot{\href{mailto:michael.stergianis@gmail.com}{michael.stergianis@}%
+  \{\href{mailto:michael.stergianis@gmail.com}{gmail.com},%
+  \href{mailto:michael.stergianis@uoit.net}{uoit.net}\}}
+\lfoot{\textbf{ \thepage | } Michael Stergianis}
+\cfoot{}
+
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\floatsetup[table]{
+  margins=raggedright,
+  justification=raggedleft
+}
+\date{}
+
+%% % Objective
+%% \begin{large} \textbf{Objective:} \end{large} \\
+%% \rule[1.2ex]{\linewidth}{0.4pt}
+%%
+%% \textbf{}
+
+\geometry{
+  letterpaper,
+  top=10mm,
+  bottom=20mm,
+}
+
+\begin{document}
+%%%% Header
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{tabular}{p{\linewidth}}
+\centering{\LARGE \textbf{Michael Stergianis}} \tabularnewline \hline 
+\\
+\centering{729 Hillcroft Street, Oshawa Ontario} \tabularnewline
+\centering{(905)-626-2050 \qquad%
+  \href{mailto:michael.stergianis@gmail.com}{michael.stergianis@}%
+  \{\href{mailto:michael.stergianis@gmail.com}{gmail.com},%
+  \href{mailto:michael.stergianis@uoit.net}{uoit.net}\}}%
+\tabularnewline
+\end{tabular}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Qualifications
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{large} \textbf{Qualifications: } \end{large} \\
+\rule[1.2ex]{\linewidth}{0.4pt}
+%
+\begin{itemize}
+\item
+  Analytical, excellent problem solving skills
+\item
+  Flexible, quickly adapts to new situations
+\item
+  Quick learner of new software utilities and concepts
+\item
+  Strong mathematics skills
+\item
+  Collaborates well in a team
+\item
+  Familiar with a variety of programming languages such as: Python, C/C++,
+  Javascript (NodeJS) and SQL
+\item
+  Familiar with UNIX (Linux) environments and tools
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Education
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{large} \textbf{Education: } \end{large}\\
+\rule[1.2ex]{\linewidth}{0.4pt}
+%%% UOIT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{tabu} to \linewidth {@{}X[l] r}
+  \textbf{Computer Science} &
+  \textbf{September 2014 -- present}
+\end{tabu}
+%
+University of Ontario Institute of Technology (UOIT), Oshawa Ontario \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Coursera
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{tabu} to \linewidth {@{}X[l] r}
+  \textbf{Machine Learning by Stanford University on Coursera} &
+  \textbf{April 2016 -- August 2016}
+\end{tabu} \\
+%
+Certificate earned on August 10, 2016
+\\
+\\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Work Experience
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{large} \textbf{Work Experience:} \end{large}\\
+\rule[1.2ex]{\linewidth}{0.4pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% USRA 2017
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{tabu} to \textwidth {@{}X[l]r}
+\textbf{Undergraduate Student Research}& 
+\textbf {April 2017 -- present}
+\end{tabu}
+%
+UOIT, Oshawa, Ontario
+%
+\begin{itemize}
+\item
+  Researching under the supervision of a Computer Science professor
+\item
+  Working towards adapting a code base for optical flow to compute
+  depth maps for stereo imaging
+\item
+  Cleaning a code base designed to compute optical flow
+\end{itemize}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Long & McQuade Sales
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{tabu} to \textwidth {@{}X[l] r}
+  \textbf{Sales \& Rental Associate} &
+  \textbf{August 2015 -- present}
+\end{tabu}
+%
+Long \& McQuade, Oshawa Ontario
+%
+\begin{itemize}
+\item
+  Facilitate rentals in every department of the store
+\item
+  Assist customers in purchasing products that met their needs
+\item
+  Answer phone calls in a professional manner
+\item
+  Completed product specialization training for every department of
+  the store
+\end{itemize}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% USRA 2016
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{tabu} to \linewidth {@{} X[l] r}
+  \textbf{Undergraduate Student Research} &
+  \textbf{April 2016 -- August 2016}
+\end{tabu}
+%
+UOIT, Oshawa, Ontario
+%
+\begin{itemize}
+\item
+  Researched under the supervision of Faisal Z. Qureshi, a computer
+  science professor
+\item
+  Learned about the use of, and implemented, convolutional neural networks in computer
+  vision applications
+\item
+  Learned about classical computer vision techniques such as edge detection
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Yorkville Warehouse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak % Temporary *layout dependent*
+\begin{tabu} to \linewidth {@{} X[l] r}
+  \textbf{Material Handler} &
+  \textbf{April 2015 -- August 2015}\\
+\end{tabu}
+%
+Yorkville Sound, Pickering Ontario
+%
+\begin{itemize}
+\item
+  Ensured correctness of shipments
+\item
+  Unloaded goods off of containers
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Long & McQuade Warehouse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{tabu} to \linewidth {@{} X[l] r}
+  \textbf{Material Handler} & \textbf{January 2013 -- August 2014} \\
+\end{tabu}
+%
+Long \& McQuade, Pickering Ontario
+%
+\begin{itemize}
+\item
+  Organized warehouse by moving high volume products to more
+  accessible locations
+\item
+  Received goods to be shipped to retail destinations
+\item
+  Prepared goods for shipment to retail locations
+\item
+  Maintained inventory by isolating shipping and receiving errors
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Volunteer Experience
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{large} \textbf{Volunteer Experience:} \end{large} \\
+\rule[1.2ex]{\linewidth}{0.4pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Math Club
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{tabu}  to \linewidth {@{} X[l] r}
+\textbf{Executive Member} & \textbf{September 2016 -- April 2017}\\
+\end{tabu}
+%
+The Math Club UOIT DC, UOIT, Oshawa, Ontario
+%
+\begin{itemize}
+\item
+  Organized events for the club
+\item
+  Networked with other campus clubs
+\item
+  Maintained contact among the other executives and the general members
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Terry Fox
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{tabu}  to \linewidth {@{} X[l] r}
+\textbf{Run Day Volunteer} & \textbf{September 2007--2016} \\
+\end{tabu}
+%
+Whitby Terry Fox Committee, Whitby, Ontario
+%
+\begin{itemize}
+\item
+  Assisted with set up and tear down
+\item
+  Served food to attendees in a polite manner
+\item
+  Assisted with preparation before the run, loading trucks,
+  distributing signs
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Orientation Leader
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{tabu} to \linewidth {@{} X[l] r}
+\textbf{Orientation Leader} & \textbf{September 2015, 2016} \\
+\end{tabu}
+%
+UOIT, Oshawa Ontario
+%
+\begin{itemize}
+\item
+  Provided new students with a welcoming environment and an easy
+  transition into their undergraduate studies at UOIT
+\item
+  Advocated for UOIT by offering insight and advice for students'
+  first year of university
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Accomplishments
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{large} \textbf{Accomplishments:} \end{large} \\
+\rule[1.2ex]{\linewidth}{0.4pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Scholarship
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{tabu} to \linewidth {@{} X[l] r}
+\text{In-Course Scholarship (UOIT)} & \text{2014-2016}
+\end{tabu} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% CIBC
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{tabu} to \linewidth {@{} X[l] r}
+\text{Completion of the CIBC Run for the Cure} & \text{2016}
+\end{tabu} 
+\\
+\\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% References
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{large} \textbf{References} \end{large} \\
+\rule[1.2ex]{\linewidth}{0.4pt}
+%
+References available upon request.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
