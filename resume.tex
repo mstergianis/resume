@@ -57,11 +57,15 @@
 \makeatletter
 \def\fps@figure{htbp}
 \makeatother
-
-\pagestyle{fancy}
-\rfoot{\href{mailto:michael.stergianis@gmail.com}{michael.stergianis@}%
+%% User defined commands
+\newcommand{\email}
+{\href{mailto:michael.stergianis@gmail.com}{michael.stergianis@}%
   \{\href{mailto:michael.stergianis@gmail.com}{gmail.com},%
   \href{mailto:michael.stergianis@uoit.net}{uoit.net}\}}
+%% END user defined commands
+
+\pagestyle{fancy}
+\rfoot{\email}
 \lfoot{\textbf{ \thepage | } Michael Stergianis}
 \cfoot{}
 
@@ -93,10 +97,7 @@
 \centering{\LARGE \textbf{Michael Stergianis}} \tabularnewline \hline 
 \\
 \centering{729 Hillcroft Street, Oshawa Ontario} \tabularnewline
-\centering{(905)-626-2050 \qquad%
-  \href{mailto:michael.stergianis@gmail.com}{michael.stergianis@}%
-  \{\href{mailto:michael.stergianis@gmail.com}{gmail.com},%
-  \href{mailto:michael.stergianis@uoit.net}{uoit.net}\}}%
+\centering{(905)-626-2050 \qquad\email}
 \tabularnewline
 \end{tabular}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
