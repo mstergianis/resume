@@ -64,8 +64,14 @@
   \href{mailto:michael.stergianis@uoit.net}{uoit.net}\}}
 
 \newcommand{\heading}[1]
-{\begin{large}\textbf{#1} \end{large}\\%
+{\begin{large}\textbf{#1}\end{large}\\%
  \rule[1.2ex]{\linewidth}{0.4pt}}
+
+\newcommand{\OneLiner}[2]{
+\begin{tabu} to \linewidth {@{} X[l] r}
+\text{#1} & \text{#2}
+\end{tabu}
+}
 
 \newenvironment{*subsection}[2]
 {
@@ -77,6 +83,8 @@
 {
   \vspace{3mm}
 }
+\newcommand{\EndSec}{\vspace{1em}}
+\renewcommand{\labelitemi}{--}
 %% END user defined commands
 
 \pagestyle{fancy}
@@ -132,8 +140,8 @@
 \item
   Highly collaborative, works well in a team
 \item
-  Familiar with a variety of programming languages such as: Python, C/C++,
-  Javascript (NodeJS) and SQL
+  Familiar with a variety of programming languages such as: Python,
+  C/C++, Java, Go, Clojure
 \item
   Familiar with UNIX (Linux) environments and tools
 \end{itemize}
@@ -145,15 +153,17 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 \begin{*subsection}{Computer Science}{September 2014 -- present}
-University of Ontario Institute of Technology (UOIT), Oshawa Ontario
+  \OneLiner{University of Ontario Institute of Technology (UOIT), Oshawa
+  Ontario}{HBSc. Computer Science}
+\begin{itemize}
+  \item Strong background in linear algebra and calculus
+  \item 
+\end{itemize}
 \end{*subsection}
-\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Coursera
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{*subsection}
-  {Machine Learning by Stanford University on Coursera}
-  {April 2016 -- August 2016}
+\begin{*subsection}{Machine Learning by Stanford University on Coursera}{April 2016 -- August 2016}%
   Certificate earned on August 10, 2016
 \end{*subsection}
 \\
@@ -162,22 +172,17 @@ University of Ontario Institute of Technology (UOIT), Oshawa Ontario
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \heading{Work Experience:}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% USRA 2017
+%%% TA 2017
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{*subsection}{Undergraduate Student Research}{April 2017 -- present}
-UOIT, Oshawa, Ontario
-%
-\begin{itemize}
-\item
-  Researching under the supervision of a Computer Science professor
-\item
-  Working towards adapting a code base for optical flow to compute
-  depth maps for stereo imaging
-\item
-  Cleaning a code base designed to compute optical flow
-\end{itemize}
+\begin{*subsection}{Teaching Assistant}{September 2017 -- December 2017}
+  \OneLiner{UOIT, Oshawa, Ontario}{CSCI2010u -- Data Structures}
+  \begin{itemize}
+    \item Taught students principles in Java programming and data structures in labs
+    \item Evaluated and assigned marks for lab and assignment submissions
+    \item Answered students questions about topics in computer science
+  \end{itemize}
 \end{*subsection}
-%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Long & McQuade Sales
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -195,6 +200,24 @@ Long \& McQuade, Oshawa Ontario
 \item
   Completed product specialization training for every department of
   the store
+\end{itemize}
+\end{*subsection}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% USRA 2017
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{*subsection}{Undergraduate Student Research}{April 2017 --
+    August 2017}
+UOIT, Oshawa, Ontario
+%
+\begin{itemize}
+\item
+  Researching under the supervision of a Computer Science professor
+\item
+  Working towards adapting a code base for optical flow to compute
+  depth maps for stereo imaging
+\item
+  Cleaning a code base designed to compute optical flow
 \end{itemize}
 \end{*subsection}
 %
@@ -219,7 +242,6 @@ UOIT, Oshawa, Ontario
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Yorkville Warehouse
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\pagebreak % Temporary *layout dependent*
 \begin{*subsection}{Material Handler}{April 2015 -- August 2015}
 %
 Yorkville Sound, Pickering Ontario
@@ -255,6 +277,23 @@ Long \& McQuade, Pickering Ontario
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \heading{Volunteer Experience:}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Terry Fox
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{*subsection}{Run Day Volunteer}{September 2007--2017}
+%
+Whitby Terry Fox Committee, Whitby, Ontario
+%
+\begin{itemize}
+\item
+  Assisted with set up and tear down
+\item
+  Served food to attendees in a polite manner
+\item
+  Assisted with preparation before the run, loading trucks,
+  distributing signs
+\end{itemize}
+\end{*subsection}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Math Club
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{*subsection}{Executive Member}{September 2016 -- April 2017}
@@ -268,23 +307,6 @@ The Math Club UOIT DC, UOIT, Oshawa, Ontario
   Networked with other campus clubs
 \item
   Maintained contact among the other executives and the general members
-\end{itemize}
-\end{*subsection}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% Terry Fox
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{*subsection}{Run Day Volunteer}{September 2007--2016}
-%
-Whitby Terry Fox Committee, Whitby, Ontario
-%
-\begin{itemize}
-\item
-  Assisted with set up and tear down
-\item
-  Served food to attendees in a polite manner
-\item
-  Assisted with preparation before the run, loading trucks,
-  distributing signs
 \end{itemize}
 \end{*subsection}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -310,23 +332,16 @@ UOIT, Oshawa Ontario
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Scholarship
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{tabu} to \linewidth {@{} X[l] r}
-\text{In-Course Scholarship (UOIT)} & \text{2014-2016}
-\end{tabu}
+\OneLiner{In-Course Scholarship (UOIT)}{2014 -- 2017}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% CIBC
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{tabu} to \linewidth {@{} X[l] r}
-\text{Completion of the CIBC Run for the Cure} & \text{2016}
-\end{tabu} 
-\\
-\\
+\OneLiner{Completion of the CIBC Run for the Cure}{2016 -- 2017} \par
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% References
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\heading{References:}
-%
-References available upon request.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+% %%%% References
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \heading{References:}
+% %
+% References available upon request.
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
