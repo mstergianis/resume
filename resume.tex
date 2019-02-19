@@ -1,8 +1,18 @@
-\documentclass[]{article} \usepackage{lmodern} \usepackage{tabu}
-\usepackage{floatrow} \usepackage{tgpagella}
-\usepackage{amssymb,amsmath} \usepackage{ifxetex,ifluatex}
-\usepackage{fancyhdr} \usepackage[margin=1.15in]{geometry}
+\documentclass[]{article}
+
+%% packages
+\usepackage{lmodern}
+\usepackage{tabu}
+\usepackage{floatrow}
+\usepackage{tgpagella}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fancyhdr}
+\usepackage{verbatim}
+\usepackage[margin=1.15in]{geometry}
 \usepackage{fixltx2e} % provides \textsubscript
+
+
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
 \usepackage[T1]{fontenc} \usepackage[utf8]{inputenc}
 \else % if luatex or xelatex
@@ -48,9 +58,7 @@
 \makeatother
 %% User defined commands
 \newcommand{\email}
-{\href{mailto:michael.stergianis@gmail.com}{michael.stergianis@}%
-  \{\href{mailto:michael.stergianis@gmail.com}{gmail.com},%
-  \href{mailto:michael.stergianis@uoit.net}{uoit.net}\}}
+{\href{mailto:michaelstergianis@gmail.com}{michael.stergianis@gmail.com}}
 
 \newcommand{\heading}[1]
 {\begin{large}\textbf{#1}\end{large}\\%
@@ -106,7 +114,7 @@
 %%%% Header
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{tabular}{p{\linewidth}}
-\centering{\LARGE \textbf{Michael Stergianis}} \tabularnewline \hline 
+\centering{\LARGE \textbf{Michael Stergianis}} \tabularnewline \hline
 \\
 \centering{729 Hillcroft Street, Oshawa Ontario} \tabularnewline
 \centering{(905)-626-2050 \qquad\email}
@@ -118,21 +126,14 @@
 \heading{Qualifications:}
 %
 \begin{itemize}
-\item
-  Analytical, excellent problem solving skills
-\item
-  Flexible, quickly adapts to new situations
-\item
-  Quick learner of new software utilities and concepts
-\item
-  Strong mathematical skills
-\item
-  Highly collaborative, works well in a team
-\item
-  Familiar with a variety of programming languages such as: Python,
-  C/C++, Java, Go, Clojure
-\item
-  Familiar with UNIX (Linux) environments and tools
+  \item Analytical, excellent problem solving skills
+  \item Flexible, quickly adapts to new situations
+  \item Quick learner of new software utilities and concepts
+  \item Strong mathematical skills
+  \item Highly collaborative, works well in a team
+  \item Strong in the following programming languages: Python,
+  Clojure, C++, Java
+  \item Familiar with UNIX (Linux, FreeBSD) environments and tools
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Education
@@ -141,13 +142,14 @@
 %%% UOIT
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-\begin{*subsection}{Computer Science}{September 2014 -- present}
+\begin{*subsection}{Computer Science}{September 2014 -- April 2018}
   \OneLiner{University of Ontario Institute of Technology (UOIT), Oshawa
   Ontario}{HBSc. Computer Science}
 \begin{itemize}
+  \item Graduated with Highest Distinction
   \item Strong background in linear algebra and calculus
   \item Proficiency in many programming languages
-  \item Strong understanding of principles of computer science.
+  \item Strong understanding of principles of computer science
 \end{itemize}
 \end{*subsection}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -162,6 +164,34 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \heading{Work Experience:}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Long & McQuade Sales
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{*subsection}{Sales \& Rental Associate}{August 2015 -- present}
+  %
+  Long \& McQuade, Oshawa Ontario
+  %
+  \begin{itemize}
+    \item Facilitate rentals in every department of the store
+    \item Assist customers in purchasing products that meet their needs
+    \item Answer phone calls in a professional manner
+    \item Completed product specialization training for every department of the store
+  \end{itemize}
+\end{*subsection}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Research Assistant
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{*subsection}{Research Assistant}{April 2018 -- August 2018}
+  \begin{itemize}
+    \item Integrated legacy C / C++ code with a Python neural network
+    \item Attended group meetings about various computer vision topics
+    \item Managed the software environment of a linux workstation
+  \end{itemize}
+\end{*subsection}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% TA 2017
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{*subsection}{Teaching Assistant}{September 2017 -- December 2017}
@@ -173,29 +203,9 @@
   \end{itemize}
 \end{*subsection}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% Long & McQuade Sales
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{*subsection}{Sales \& Rental Associate}{August 2015 -- present}
-%
-Long \& McQuade, Oshawa Ontario
-%
-\begin{itemize}
-\item
-  Facilitate rentals in every department of the store
-\item
-  Assist customers in purchasing products that met their needs
-\item
-  Answer phone calls in a professional manner
-\item
-  Completed product specialization training for every department of
-  the store
-\end{itemize}
-\end{*subsection}
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% USRA 2017
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak{}
 \begin{*subsection}{Undergraduate Student Research}{April 2017 --
     August 2017}
 UOIT, Oshawa, Ontario
@@ -226,21 +236,8 @@ UOIT, Oshawa, Ontario
   Learned about the use of, and implemented, convolutional neural networks in computer
   vision applications
 \item
-  Learned about classical computer vision techniques such as edge detection
-\end{itemize}
-\end{*subsection}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% Yorkville Warehouse
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{*subsection}{Material Handler}{April 2015 -- August 2015}
-%
-Yorkville Sound, Pickering Ontario
-%
-\begin{itemize}
-\item
-  Ensured correctness of shipments
-\item
-  Unloaded goods off of containers
+  Learned about classical computer vision techniques such as edge
+  detection, and histogram of oriented gradients
 \end{itemize}
 \end{*subsection}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -322,16 +319,36 @@ UOIT, Oshawa Ontario
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Scholarship
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\OneLiner{In-Course Scholarship (UOIT)}{2014 -- 2017}
+\OneLiner{In-Course Scholarship (UOIT)}{2014 -- 2018}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% CIBC
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\OneLiner{Completion of the CIBC Run for the Cure}{2016 -- 2017} \par
+\OneLiner{Completion of the CIBC Run for the Cure}{2016 -- 2018} \par
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% %%%% References
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \heading{References:}
-% %
-% References available upon request.
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{comment}
+%%%% References
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\heading{References:}
+%
+References available upon request.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{comment}
+\begin{comment}
+%%% Yorkville Warehouse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{*subsection}{Material Handler}{April 2015 -- August 2015}
+%
+Yorkville Sound, Pickering Ontario
+%
+\begin{itemize}
+\item
+  Ensured correctness of shipments
+\item
+  Unloaded goods off of containers
+\end{itemize}
+\end{*subsection}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{comment}
 \end{document}
+
