@@ -3,6 +3,7 @@
 %% packages
 \usepackage{lmodern}
 \usepackage{tabu}
+\usepackage{calc}
 \usepackage{floatrow}
 \usepackage{tgpagella}
 \usepackage{amssymb,amsmath}
@@ -62,7 +63,7 @@
 
 \newcommand{\heading}[1]
 {\begin{large}\textbf{#1}\end{large}\\%
- \rule[1.2ex]{\linewidth}{0.4pt}}
+ \noindent\rule[1.2ex]{\linewidth+0.40cm}{0.4pt}}
 
 \newcommand{\OneLiner}[2]{
 \begin{tabu} to \linewidth {@{} X[l] r}
@@ -116,7 +117,7 @@
 \begin{tabular}{p{\linewidth}}
 \centering{\LARGE \textbf{Michael Stergianis}} \tabularnewline \hline
 \\
-\centering{729 Hillcroft Street, Oshawa Ontario} \tabularnewline
+\centering{729 Hillcroft Street, Oshawa, Ontario} \tabularnewline
 \centering{(905)-626-2050 \qquad\email}
 \tabularnewline
 \end{tabular}
@@ -133,7 +134,7 @@
   \item Highly collaborative, works well in a team
   \item Strong in the following programming languages: Python, Golang,
   Clojure, C++, Java
-  \item Familiar with UNIX (Linux, FreeBSD) environments and tools
+  \item Proficient with UNIX (Linux, FreeBSD) environments and tools
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Education
@@ -143,13 +144,17 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 \begin{*subsection}{Computer Science}{September 2014 -- April 2018}
-  \OneLiner{Ontario Tech University, Oshawa Ontario}{HBSc. Computer Science}
+  \OneLiner{Ontario Tech University, Oshawa, Ontario}{HBSc. Computer Science}
 \begin{itemize}
   \item Graduated with Highest Distinction
   \item Maintained the highest GPA among peers in computer science
-  \item Strong background in linear algebra, calculus, and discrete math
-  \item Proficiency in many programming languages
-  \item Strong understanding of algorithms and data structures
+  \item Proficient in the use of algorithms, data structures, machine
+  learning and modeling
+  \item Excellent understanding of linear algebra, calculus, and discrete math
+  \item Experience with several machine learning frameworks such as:
+  TensorFlow and PyTorch
+  \item Familiar with concepts relating to computer vision such as:
+  stereo vision, semantic segmentation and optical flow
 \end{itemize}
 \end{*subsection}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -157,8 +162,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{*subsection}{Machine Learning by Stanford University on Coursera}{April 2016 -- August 2016}%
   Certificate earned on August 10, 2016
+  \begin{itemize}
+    \item Learned about core concepts in machine learning
+    \item Studied unsupervised and supervised methods for learning
+  \end{itemize}
 \end{*subsection}
-\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Work Experience
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -168,32 +176,17 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{*subsection}{Sales \& Rental Associate}{August 2015 -- April 2019}
   %
-  Long \& McQuade, Oshawa Ontario
+  Long \& McQuade, Oshawa, Ontario
   %
   \begin{itemize}
-    \item Facilitates rentals in every department of the store
-    \item Assists customers in purchasing products that meet their needs
-    \item Answers phone calls in a professional manner
+    \item Facilitated rentals in every department of the store
+    \item Assisted customers in purchasing products that meet their needs
+    \item Answered phone calls in a professional manner
     \item Completed product specialization training for every department of the store
+    \item Extended excellent customer service to patrons of the store
   \end{itemize}
 \end{*subsection}
 %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% Research Assistant
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{*subsection}{Research Assistant}{April 2018 -- August 2018}
-  %
-  Ontario Tech University, Oshawa Ontario
-  %
-  \begin{itemize}
-    \item Integrated legacy C / C++ code with a Python neural network
-    \item Attended group meetings about various computer vision topics
-    \item Managed the software environment of a linux workstation
-  \end{itemize}
-\end{*subsection}
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% TA 2017
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -206,48 +199,12 @@
   \end{itemize}
 \end{*subsection}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% USRA 2017
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\pagebreak{}
-\begin{*subsection}{Undergraduate Student Research}{April 2017 -- August 2017}
-Ontario Tech University, Oshawa, Ontario
-%
-\begin{itemize}
-\item
-  Researched under the supervision of a Computer Science professor
-\item
-  Worked towards adapting a code base for optical flow to compute
-  depth maps for stereo imaging
-\item
-  Cleaned a code base designed to compute optical flow
-\end{itemize}
-\end{*subsection}
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% USRA 2016
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{*subsection}{Undergraduate Student Research}{April 2016 -- August 2016}
-%
-Ontario Tech University, Oshawa, Ontario
-%
-\begin{itemize}
-\item
-  Researched under the supervision of Faisal Z. Qureshi, a computer
-  science professor
-\item
-  Learned about the use of, and implemented, convolutional neural networks in computer
-  vision applications
-\item
-  Learned about classical computer vision techniques such as edge
-  detection, and histogram of oriented gradients
-\end{itemize}
-\end{*subsection}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Long & McQuade Warehouse
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak{}
 \begin{*subsection}{Material Handler}{January 2013 -- August 2014}
 %
-Long \& McQuade, Pickering Ontario
+Long \& McQuade, Pickering, Ontario
 %
 \begin{itemize}
 \item
@@ -268,7 +225,7 @@ Long \& McQuade, Pickering Ontario
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Terry Fox
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{*subsection}{Run Day Volunteer}{September 2007--2017}
+\begin{*subsection}{Run Day Volunteer}{September 2007--2018}
 %
 Whitby Terry Fox Committee, Whitby, Ontario
 %
@@ -287,7 +244,7 @@ Whitby Terry Fox Committee, Whitby, Ontario
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{*subsection}{Executive Member}{September 2016 -- April 2017}
 %
-The Math Club OnTechU/DC, Ontario Tech University, Oshawa, Ontario
+The Math Club UOIT/DC, Ontario Tech University, Oshawa, Ontario
 %
 \begin{itemize}
 \item
@@ -303,7 +260,7 @@ The Math Club OnTechU/DC, Ontario Tech University, Oshawa, Ontario
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{*subsection}{Orientation Leader}{September 2015}
 %
-Ontario Tech University, Oshawa Ontario
+Ontario Tech University, Oshawa, Ontario
 %
 \begin{itemize}
 \item
@@ -341,7 +298,7 @@ References available upon request.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{*subsection}{Material Handler}{April 2015 -- August 2015}
 %
-Yorkville Sound, Pickering Ontario
+Yorkville Sound, Pickering, Ontario
 %
 \begin{itemize}
 \item
@@ -353,4 +310,3 @@ Yorkville Sound, Pickering Ontario
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{comment}
 \end{document}
-
