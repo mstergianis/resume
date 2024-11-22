@@ -1,312 +1,219 @@
-\documentclass[]{article}
+\documentclass[letterpaper]{article}
 
-%% packages
-\usepackage{lmodern}
-\usepackage{tabu}
-\usepackage{calc}
-\usepackage{floatrow}
-\usepackage{tgpagella}
-\usepackage{amssymb,amsmath}
-\usepackage{ifxetex,ifluatex}
-\usepackage{fancyhdr}
-\usepackage{verbatim}
-\usepackage[margin=1.15in]{geometry}
-\usepackage{fixltx2e} % provides \textsubscript
+\usepackage[margin=0.5in]{geometry}
+\usepackage[sfdefault]{biolinum}
+\usepackage[x11names]{xcolor}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage{layout}
+\usepackage{tikz}
+\usetikzlibrary{shadows.blur}
 
-
-\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
-\usepackage[T1]{fontenc} \usepackage[utf8]{inputenc}
-\else % if luatex or xelatex
-\ifxetex \usepackage{mathspec} \else \usepackage{fontspec} \fi
-\defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase} \fi
-% use upquote if available, for straight quotes in verbatim environments
-\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
-% use microtype if available
-\IfFileExists{microtype.sty}{%
-\usepackage[]{microtype}
-\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
-}{}
-\PassOptionsToPackage{hyphens}{url} % url is loaded by hyperref
 \usepackage[unicode=true]{hyperref}
-\hypersetup{
-            pdfborder={0 0 0},
-            breaklinks=true}
+\hypersetup{pdfborder={0 0 0},
+  breaklinks=true}
+
+\definecolor{primary}{HTML}{277ed1}
+\newcommand{\primary}{\color{primary}}
+
+\definecolor{primarylight}{HTML}{e4f3fd}
+\newcommand{\primarylight}{\color{primarylight}}
+
+\definecolor{primarydark}{HTML}{1650a0}
+\newcommand{\primarydark}{\color{primarydark}}
+
+\definecolor{complementary}{HTML}{dca021}
+\newcommand{\complementary}{\color{complementary}}
+
+\definecolor{complementarylight}{HTML}{ffc529}
+\newcommand{\complementarylight}{\color{complementarylight}}
+
+\definecolor{complementaryscant}{HTML}{ffe194}
+\newcommand{\complementaryscant}{\color{complementaryscant}}
+
 \urlstyle{same}  % don't use monospace font for urls
-\IfFileExists{parskip.sty}{%
-\usepackage{parskip}
-}{% else
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{6pt plus 2pt minus 1pt}
-}
-\setlength{\emergencystretch}{3em}  % prevent overfull lines
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
-}
-\setcounter{secnumdepth}{0}
-% Redefines (sub)paragraphs to behave more like sections
-\ifx\paragraph\undefined\else
-\let\oldparagraph\paragraph
-\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
-\fi
-\ifx\subparagraph\undefined\else
-\let\oldsubparagraph\subparagraph
-\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
-\fi
 
-% set default figure placement to htbp
-\makeatletter
-\def\fps@figure{htbp}
-\makeatother
-%% User defined commands
+\newcommand{\mapMarker}{\faMapMarker*[alt]}
+
 \newcommand{\email}
-{\href{mailto:michaelstergianis@gmail.com}{michael.stergianis@gmail.com}}
+{\faEnvelope \space \href{mailto:michaelstergianis@gmail.com}{michael.stergianis@gmail.com}}
+\newcommand{\github}
+{\faGithub \space \href{https://github.com/mstergianis}{github.com/mstergianis}}
+\newcommand{\phone}
+{\faPhone \space (905)-626-2050}
+\newcommand{\location}
+{\mapMarker \space Oshawa, Ontario Canada}
 
-\newcommand{\heading}[1]
-{\begin{large}\textbf{#1}\end{large}\\%
- \noindent\rule[1.2ex]{\linewidth+0.40cm}{0.4pt}}
+\newenvironment{heading}[1]{%
+  {\LARGE \primarydark \textbf{#1}}\\ {\complementary
+    \rule[5pt]{\linewidth}{0.6pt}}
+}
+{\par\vspace{8pt}}
 
-\newcommand{\OneLiner}[2]{
-\begin{tabu} to \linewidth {@{} X[l] r}
-\text{#1} & \text{#2}
-\end{tabu}
+\newenvironment{experience}[4]{
+  { #1 \par}
+  {\small \primary #2 \par}
+  \begin{tabularx}{\linewidth}{ l l }
+    { \small \faCalendar \space #3 } & { \small \mapMarker \space #4 }
+  \end{tabularx}%
+}{
+  \vspace{8pt}
 }
 
-\newenvironment{*subsection}[2]
-{
-\begin{tabu} to \linewidth {@{}X[l] r}
-  \textbf{#1} &
-  \textbf{#2}
-\end{tabu}
+\newenvironment{project}[2]{%
+  { #1 \par }
+  { \small \primary #2 \par }%
+}{
+  \vspace{8pt}
 }
-{
-  \vspace{3mm}
+
+\newenvironment{itemize*}%
+{\begin{itemize}[topsep=0pt,leftmargin=20pt]%
+    \setlength{\itemsep}{0pt}%
+    \setlength{\parsep}{0pt}%
+    \setlength{\parskip}{0pt}%
+    \small%
+  }%
+  {\end{itemize}}
+
+\newcommand{\skill}[1]{%
+  \begin{tikzpicture}%
+    \node[anchor=base,
+          fill=primarylight,
+          draw=complementaryscant,
+          inner xsep=0ex,
+          inner ysep=.5ex,
+          thick,
+          minimum height=5mm,
+          rounded corners=0.8mm]%
+    {\begin{tabular}{c} {\small #1} \end{tabular}};%
+  \end{tikzpicture}%
 }
-\newcommand{\EndSec}{\vspace{1em}}
-\renewcommand{\labelitemi}{--}
-%% END user defined commands
 
-\pagestyle{fancy}
-\rfoot{\email}
-\lfoot{\textbf{ \thepage | } Michael Stergianis}
-\cfoot{}
+\setlength{\parindent}{0pt}
 
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0.4pt}
-
-\floatsetup[table]{
-  margins=raggedright,
-  justification=raggedleft
-}
-\date{}
-
-%% % Objective
-%% \begin{large} \textbf{Objective:} \end{large} \\
-%% \rule[1.2ex]{\linewidth}{0.4pt}
-%%
-%% \textbf{}
-
-\geometry{
-  letterpaper,
-  top=10mm,
-  bottom=20mm,
-}
+\pagestyle{empty}
 
 \begin{document}
-%%%% Header
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{tabular}{p{\linewidth}}
-\centering{\LARGE \textbf{Michael Stergianis}} \tabularnewline \hline
+{\huge \textbf{Michael Stergianis}}\\
+{\large \primary \textbf{Programmer}}
 \\
-\centering{729 Hillcroft Street, Oshawa, Ontario} \tabularnewline
-\centering{(905)-626-2050 \qquad\email}
-\tabularnewline
-\end{tabular}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% Qualifications
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\heading{Qualifications:}
-%
-\begin{itemize}
-  \item Analytical, excellent problem solving skills
-  \item Flexible, quickly adapts to new situations
-  \item Quick learner of new software utilities and concepts
-  \item Strong mathematical skills
-  \item Highly collaborative, works well in a team
-  \item Strong in the following programming languages: Python, Golang,
-  Clojure, C++, Java
-  \item Proficient with UNIX (Linux, FreeBSD) environments and tools
-\end{itemize}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% Education
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\heading{Education:}
-%%% Ontario Tech University
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-\begin{*subsection}{Computer Science}{September 2014 -- April 2018}
-  \OneLiner{Ontario Tech University, Oshawa, Ontario}{HBSc. Computer Science}
-\begin{itemize}
-  \item Graduated with Highest Distinction
-  \item Maintained the highest GPA among peers in computer science
-  \item Proficient in the use of algorithms, data structures, machine
-  learning and modeling
-  \item Excellent understanding of linear algebra, calculus, and discrete math
-  \item Experience with several machine learning frameworks such as:
-  TensorFlow and PyTorch
-  \item Familiar with concepts relating to computer vision such as:
-  stereo vision, semantic segmentation and optical flow
-\end{itemize}
-\end{*subsection}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% Coursera
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{*subsection}{Machine Learning by Stanford University on Coursera}{April 2016 -- August 2016}%
-  Certificate earned on August 10, 2016
-  \begin{itemize}
-    \item Learned about core concepts in machine learning
-    \item Studied unsupervised and supervised methods for learning
-  \end{itemize}
-\end{*subsection}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% Work Experience
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\heading{Work Experience:}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% Long & McQuade Sales
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{*subsection}{Sales \& Rental Associate}{August 2015 -- April 2019}
-  %
-  Long \& McQuade, Oshawa, Ontario
-  %
-  \begin{itemize}
-    \item Facilitated rentals in every department of the store
-    \item Assisted customers in purchasing products that meet their needs
-    \item Answered phone calls in a professional manner
-    \item Completed product specialization training for every department of the store
-    \item Extended excellent customer service to patrons of the store
-  \end{itemize}
-\end{*subsection}
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% TA 2017
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{*subsection}{Teaching Assistant}{September 2017 -- December 2017}
-  \OneLiner{Ontario Tech University, Oshawa, Ontario}{CSCI2010u -- Data Structures}
-  \begin{itemize}
-    \item Taught students principles in Java programming and data structures in labs
-    \item Evaluated and assigned marks for lab and assignment submissions
-    \item Answered students questions about topics in computer science
-  \end{itemize}
-\end{*subsection}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% Long & McQuade Warehouse
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\pagebreak{}
-\begin{*subsection}{Material Handler}{January 2013 -- August 2014}
-%
-Long \& McQuade, Pickering, Ontario
-%
-\begin{itemize}
-\item
-  Organized warehouse by moving high volume products to more
-  accessible locations
-\item
-  Received goods to be shipped to retail destinations
-\item
-  Prepared goods for shipment to retail locations
-\item
-  Maintained inventory by isolating shipping and receiving errors
-\end{itemize}
-\end{*subsection}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% Volunteer Experience
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\heading{Volunteer Experience:}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% Terry Fox
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{*subsection}{Run Day Volunteer}{September 2007--2018}
-%
-Whitby Terry Fox Committee, Whitby, Ontario
-%
-\begin{itemize}
-\item
-  Assisted with set up and tear down
-\item
-  Served food to attendees in a polite manner
-\item
-  Assisted with preparation before the run, loading trucks,
-  distributing signs
-\end{itemize}
-\end{*subsection}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% Math Club
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{*subsection}{Executive Member}{September 2016 -- April 2017}
-%
-The Math Club UOIT/DC, Ontario Tech University, Oshawa, Ontario
-%
-\begin{itemize}
-\item
-  Organized events for the club
-\item
-  Networked with other campus clubs
-\item
-  Maintained contact among the other executives and the general members
-\end{itemize}
-\end{*subsection}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% Orientation Leader
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{*subsection}{Orientation Leader}{September 2015}
-%
-Ontario Tech University, Oshawa, Ontario
-%
-\begin{itemize}
-\item
-  Provided new students with a welcoming environment and an easy
-  transition into their undergraduate studies at Ontario Tech University
-\item
-  Advocated for Ontario Tech University by offering insight and advice for students'
-  first year of university
-\end{itemize}
-\end{*subsection}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% Accomplishments
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\heading{Accomplishments:}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% Scholarship
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\OneLiner{In-Course Scholarship (Ontario Tech University)}{2014 -- 2018}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% CIBC
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\OneLiner{Completion of the CIBC Run for the Cure}{2016 -- 2018} \par
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{comment}
-%%%% References
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\heading{References:}
-%
-References available upon request.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\end{comment}
-\begin{comment}
-%%% Yorkville Warehouse
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{*subsection}{Material Handler}{April 2015 -- August 2015}
-%
-Yorkville Sound, Pickering, Ontario
-%
-\begin{itemize}
-\item
-  Ensured correctness of shipments
-\item
-  Unloaded goods off of containers
-\end{itemize}
-\end{*subsection}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\end{comment}
+\begin{tabularx}{\linewidth}{ l l l l }
+  \phone & \email & \github & \location \\
+\end{tabularx}\\
+
+\begin{minipage}[t]{0.58\textwidth}%
+  \begin{heading}{Attributes}
+    \begin{itemize*}
+    \item eager to take on a leadership role
+    \item willing to give an opinion without being strongly attached
+    \item helps peers through problems
+    \item able to effectively explain complex concepts
+    \item investigates problems deeply until they have an answer
+    \item able to work independently or in a group
+    \end{itemize*}
+  \end{heading}
+  %
+  \begin{heading}{Experience}%
+    \begin{experience}{Senior Member of Technical Staff}
+      {VMware \& Broadcom Software (by acquisition)}
+      {Jan 2022 -- Oct 2024}
+      {(Remote) Oshawa, Ontario}
+      Served as technical lead on the Tanzu Developer Portal team.
+      \begin{itemize*}
+      \item worked with key stakeholders to interpret customer needs and scope
+        new tracks of work
+      \item designed larger features including small sections of architecture
+      \item performed code reviews
+      \item facilitated engineering oriented meetings
+      \item performed and taught others to do CVE triaging
+      \item wrote and reviewed customer facing documentation
+      \item worked with customers to identify issues and determine solutions
+      \end{itemize*}
+    \end{experience}
+    %
+    \begin{experience}{Member of Technical Staff 3}
+      {VMware}
+      {Oct 2020 -- Jan 2022}
+      {(Remote) Oshawa, Ontario}
+      Served as team anchor.
+      \begin{itemize*}
+      \item interfaced with product and design to scope new features
+      \item led and designed tracks of work
+      \item ramped up engineers
+      \end{itemize*}
+    \end{experience}
+    %
+    \begin{experience}{Software Engineer 2 -- Member of Technical Staff 2}
+      {Pivotal \& VMware (by acquisition)}
+      {Aug 2019 -- Oct 2020}
+      {Toronto, Ontario -- (Remote) Oshawa, Ontario}
+      \begin{itemize*}
+        \item implemented features according to tickets
+        \item designed larger structures in the frontend to promote code reuse
+        \item maintained a full stack codebase in golang and typescript
+        \item learned pair programming and Test Driven Development (TDD)
+      \end{itemize*}
+    \end{experience}
+    %
+    \begin{heading}{Education}
+      \begin{experience}{HBSc. Computer Science}
+        {University of Ontario Institute of Technology}
+        {September 2014 -- April 2018}
+        {Oshawa, Ontario}
+        \begin{itemize*}
+          \item Graduated with Highest Distinction
+          \item Maintained the highest GPA among peers
+        \end{itemize*}
+      \end{experience}
+    \end{heading}
+    %
+  \end{heading}
+\end{minipage}%
+\hspace{0.04\textwidth}%
+\begin{minipage}[t]{0.38\textwidth}%
+  \begin{heading}{Skills}
+    \skill{Typescript}
+    \skill{React}
+    \skill{Golang}
+    \skill{Kubernetes}
+    \skill{FluxCD}
+    \skill{TDD}
+    \skill{Bash}
+    \skill{Linux}
+  \end{heading}
+  %
+  \begin{heading}{Projects}
+    \begin{project}{Homelab (Personal)}{Maintains a home server infrastructure}%
+      \begin{itemize*}
+        \item NAS running TrueNAS with a ZFS RAID array
+        \item multi-node Kubernetes cluster deployed with kubeadm
+        \item NFS storage class for applications that need persistent disc
+        \item Kubernetes manifests are managed in git control using FluxCD
+      \end{itemize*}
+    \end{project}
+    %
+    \begin{project}{Tanzu Developer Portal}{Maintained a codebase split across
+        several teams}%
+      \begin{itemize*}
+        \item \href{https://backstage.io}{backstage} as the foundation
+        \item several teams maintained plugins that were integrated by us
+        \item maintained core infrastructure and libraries
+        \item maintained Kubernetes manifests for customer deployments in
+          \href{https://carvel.dev}{carvel} tooling
+      \end{itemize*}
+    \end{project}
+  \end{heading}
+  %
+  \begin{heading}{Hobbies}
+    \skill{Cooking}
+    \skill{Crosswords}
+    \skill{Baking bread}
+    \skill{Programming}
+    \skill{Bouldering}
+    \skill{Hiking}
+  \end{heading}
+\end{minipage}
 \end{document}
