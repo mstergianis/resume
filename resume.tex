@@ -11,8 +11,6 @@
 \usetikzlibrary{shadows.blur}
 
 \usepackage[unicode=true]{hyperref}
-\hypersetup{pdfborder={0 0 0},
-  breaklinks=true}
 
 \definecolor{primary}{HTML}{277ed1}
 \newcommand{\primary}{\color{primary}}
@@ -32,6 +30,12 @@
 \definecolor{complementaryscant}{HTML}{ffe194}
 \newcommand{\complementaryscant}{\color{complementaryscant}}
 
+\hypersetup{
+  pdfborder={0 0 0},
+  colorlinks=true,
+  urlcolor=primarydark,
+  breaklinks=true,
+}
 \urlstyle{same}  % don't use monospace font for urls
 
 \newcommand{\mapMarker}{\faMapMarker*[alt]}
@@ -42,14 +46,18 @@
 {\faGithub \space \href{https://github.com/mstergianis}{github.com/mstergianis}}
 \newcommand{\phone}
 {\faPhone \space \href{tel:+1-905-626-2050}{(905)-626-2050}}
+\newcommand{\portfolio}
+{\faBriefcase \space \href{https://michael.stergianis.ca}{Portfolio}}
 \newcommand{\location}
-{\mapMarker \space Oshawa, Ontario Canada}
+{\mapMarker \space Oshawa, ON}
 
 \newenvironment{heading}[1]{%
   {\LARGE \primarydark \textbf{#1}}\\ {\complementary
     \rule[5pt]{\linewidth}{0.6pt}}
 }
 {\par\vspace{8pt}}
+
+\newcommand{\blockend}{\vspace{4pt}}
 
 \newenvironment{experience}[4]{
   { #1 \par}
@@ -58,14 +66,14 @@
     { \small \faCalendar \space #3 } & { \small \mapMarker \space #4 }
   \end{tabularx}%
 }{
-  \vspace{8pt}
+  \blockend{}
 }
 
 \newenvironment{project}[2]{%
   { #1 \par }
   { \small \primary #2 \par }%
 }{
-  \vspace{8pt}
+  \blockend{}
 }
 
 \newenvironment{itemize*}%
@@ -76,6 +84,8 @@
     \small%
   }%
   {\end{itemize}}
+
+\newenvironment{prose}{\small}{\par}
 
 \newcommand{\skill}[1]{%
   \begin{tikzpicture}%
@@ -91,6 +101,10 @@
   \end{tikzpicture}%
 }
 
+\newcommand{\hobby}[2]{%
+  {\small {\primarydark{#1}} #2} \par \vspace{2pt}
+}
+
 \setlength{\parindent}{0pt}
 
 \pagestyle{empty}
@@ -100,123 +114,159 @@
 {\large \primary \textbf{Programmer}}
 \\
 
-\begin{tabularx}{\linewidth}{ l l l l }
-  \phone & \email & \github & \location \\
+\begingroup
+\hypersetup{
+  urlcolor=.,
+}
+\begin{tabularx}{\linewidth}{ l l l l l }
+  \phone & \email & \github & \portfolio & \location \\
 \end{tabularx}\\
+\endgroup
 
-\begin{minipage}[t]{0.58\textwidth}%
+\begin{minipage}[t]{0.59\textwidth}%
   \begin{heading}{Attributes}
     \begin{itemize*}
-    \item eager to take on a leadership role
-    \item willing to give an opinion without being strongly attached
-    \item helps peers through problems
-    \item quickly picks up concepts from others
-    \item able to effectively explain complex concepts
-    \item investigates problems deeply until they have an answer
-    \item able to work independently or in a group
+    \item Eager to take on a leadership role
+    \item Willing to give an opinion without being strongly attached
+    \item Helps peers through problems
+    \item Quickly picks up concepts from others
+    \item Able to effectively explain complex concepts
+    \item Investigates problems deeply until they have an answer
+    \item Able to work independently or in a group
     \end{itemize*}
   \end{heading}
   %
   \begin{heading}{Experience}%
-    \begin{experience}{Senior Member of Technical Staff}
-      {VMware \(\rightarrow\) Broadcom Inc. (by acquisition)}
+    \begin{experience}{Senior Software Engineer}
+      {VMware -- Broadcom Inc. (by acquisition)}
       {Jan 2022 -- Oct 2024}
       {(Remote) Oshawa, Ontario}
       Served as technical lead on the Tanzu Developer Portal team.
       \begin{itemize*}
-      \item worked with key stakeholders to interpret customer needs and scope
+      \item Was central to the successful release of the product during multiple
+        release deadlines
+      \item Worked with key stakeholders to interpret customer needs and scope
         new tracks of work
-      \item designed larger features including small sections of architecture
-      \item performed code reviews
-      \item facilitated engineering oriented meetings
-      \item performed and taught others to do CVE triaging
-      \item wrote and reviewed customer facing documentation
-      \item worked with customers to identify issues and determine solutions
+      \item Started a series of meetings where engineers would come together to
+        talk about technical debt; the artifacts of the meeting were new tickets
+        in the backlog to address said technical debt
+      \item Performed and taught others to do CVE triaging
+      \item Worked one on one with users of the product to understand their pain
+        and determine solutions to their problems
       \end{itemize*}
     \end{experience}
     %
-    \begin{experience}{Member of Technical Staff 3}
+    \begin{experience}{Software Engineer 3}
       {VMware}
       {Oct 2020 -- Jan 2022}
       {(Remote) Oshawa, Ontario}
-      Served as team anchor.
+      Continued to hone my skills
       \begin{itemize*}
-      \item interfaced with product and design to scope new features
-      \item led and designed tracks of work
-      \item ramped up engineers
+      % 1. phrase this in a way that showcases skill
+      % 2. what tracks of work?
+      % 3. too broad, narrow it down
+      \item Was mentored by a more senior engineer and involved in conversations
+        that steered the technical direction of a new team.
+      \item Performed a
+        \href{https://github.com/vmware-archive/octant/pull/2581}{large
+          refactor} on an unfamiliar codebase to a custom transport mechanism to
+        be used in our proprietary product.
       \end{itemize*}
     \end{experience}
-    %
-    \begin{experience}{Software Engineer 2 -- Member of Technical Staff 2}
-      {Pivotal \(\rightarrow\) VMware (by acquisition)}
+
+    \begin{experience}{Software Engineer 2}
+      {Pivotal -- VMware (by acquisition)}
       {Aug 2019 -- Oct 2020}
       {Toronto, Ontario -- (Remote) Oshawa, Ontario}
       Joined a full-stack team and began my journey.
       \begin{itemize*}
-        \item implemented features according to tickets
-        \item designed larger structures in the front-end to promote code reuse
-        \item maintained a full stack codebase in golang and typescript
-        \item learned pair programming and Test Driven Development (TDD)
-        \item became team anchor
+        \item Led and designed a track of work where a software system,
+          \href{https://github.com/vmware-tanzu-labs/cf-mgmt}{cf-mgmt}, was
+          automated using \href{https://github.com/libgit2/git2go}{git2go}
+        \item Performed medium size refactor in the front-end to reuse code
+        \item Maintained a full stack codebase in Golang and Typescript
+        \item Learned pair programming and Test Driven Development (TDD)
+        \item Became the team anchor (technical lead)
       \end{itemize*}
     \end{experience}
-    %
+
     \begin{heading}{Education}
       \begin{experience}{HBSc. Computer Science}
         {University of Ontario Institute of Technology}
         {Sep 2014 -- Apr 2018}
         {Oshawa, Ontario}
         \begin{itemize*}
-          \item graduated with Highest Distinction
-          \item maintained the highest GPA among peers
+          \item Graduated with Highest Distinction
+          \item Maintained the highest GPA among peers
         \end{itemize*}
       \end{experience}
     \end{heading}
-    %
   \end{heading}
+
 \end{minipage}%
-\hspace{0.04\textwidth}%
-\begin{minipage}[t]{0.38\textwidth}%
+\hspace{0.02\textwidth}%
+\begin{minipage}[t]{0.39\textwidth}%
   \begin{heading}{Skills}
     \skill{Typescript}
     \skill{React}
     \skill{Golang}
-    \skill{Kubernetes}
-    \skill{FluxCD}
     \skill{TDD}
+    \skill{FluxCD}
+    \skill{Kubernetes}
     \skill{Bash}
     \skill{Linux}
+    \skill{Vim}
   \end{heading}
-  %
+
   \begin{heading}{Projects}
-    \begin{project}{Homelab (Personal)}{Maintains a home server infrastructure}%
+    \begin{project}{Homelab}{Maintains a home server infrastructure}%
       \begin{itemize*}
         \item NAS running TrueNAS with a ZFS RAID array
-        \item multi-node Kubernetes cluster deployed with kubeadm
+        \item Multi-node Kubernetes cluster deployed with kubeadm
         \item NFS storage class for applications that need persistent disc
         \item Kubernetes manifests are managed in git control using FluxCD
       \end{itemize*}
     \end{project}
-    %
+
     \begin{project}{Tanzu Developer Portal}
       {Maintained a codebase split across several teams and repositories}%
       \begin{itemize*}
-        \item \href{https://backstage.io}{backstage} as the foundation
-        \item several teams maintained plugins that were integrated by us
-        \item maintained core infrastructure and libraries
-        \item maintained Kubernetes manifests for customer deployments in
-          \href{https://carvel.dev}{carvel} tooling
+        \item Full stack web app in Node, Typescript and React that enabled
+          users to create internal developer portals.
+        \item Several teams, approximately 30 engineers total, maintained
+          plugins that were reviewed and integrated by us
+        \item Was the first Backstage offering to market with \linebreak no-code
+          configurable plugins.
+        \item Featured a \href{https://carvel.dev}{carvel} install that
+          automated away many pain points of the Backstage install process
       \end{itemize*}
     \end{project}
+
+    \begin{project}{Ship of Harkinian}
+      {A PC port of The Legend of Zelda: Ocarina of Time}%
+      \begin{prose}
+        My friend and I added a text filter to the
+        \href{https://www.shipofharkinian.com/}{Ship of Harkinian} randomizer
+        check tracker. For more information, check
+        \href{https://michael.stergianis.ca/posts/adding-a-text-filter-to-the-ship-of-harkinian-randomizer-check-tracker/}{this}
+        out.
+      \end{prose}
+    \end{project}
+    %
   \end{heading}
   %
   \begin{heading}{Hobbies}
-    \skill{Cooking}
-    \skill{Crosswords}
-    \skill{Baking bread}
-    \skill{Programming}
-    \skill{Bouldering}
-    \skill{Hiking}
+    \hobby{Cooking}{means so much to me. As a way of communicating love, a form
+      of self care, meditation, and of course the results are delicious.}
+
+    \hobby{Crosswords}{are my recreational puzzle of choice. My current best NYT
+      Monday time is 4:34.}
+
+    \hobby{Bouldering}{allows one to push their body to its limits while working
+    through complex spacial problems.}
+
+    \hobby{Hiking}{in nature is a wonderful way to spend time. You can work out
+      complex problems in your head, or simply clear it.}
   \end{heading}
 \end{minipage}
 \end{document}
