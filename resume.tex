@@ -7,8 +7,12 @@
 \usepackage{enumitem}
 \usepackage{fontawesome5}
 \usepackage{layout}
+
 \usepackage{tikz}
 \usetikzlibrary{shadows.blur}
+
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
 
 \usepackage[unicode=true]{hyperref}
 
@@ -114,9 +118,17 @@
 \pagestyle{empty}
 
 \begin{document}
-{\huge \textbf{Michael Stergianis}}\\
-{\large \primary \textbf{Programmer}}
-\\
+
+{
+\renewcommand{\tabularxcolumn}[1]{b{#1}}
+\begin{tabularx}{\textwidth}{ m{.85\linewidth} m{.15\linewidth} }
+  {
+    {\huge \textbf{Michael Stergianis} \par }
+    {\large \primary \textbf{Programmer} \par}
+  }
+  & {\raggedleft \includegraphics[width=0.1\textwidth]{headshot_portrait.jpg}}
+\end{tabularx}
+}
 
 \begingroup
 \hypersetup{
